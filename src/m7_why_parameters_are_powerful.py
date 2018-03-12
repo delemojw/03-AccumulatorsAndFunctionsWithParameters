@@ -100,7 +100,7 @@ def better_draw_circles():
     for k in range(5):
         center = rg.Point(200, 200)
         radius = radius + (k + 1)
-        circle = rg.Circle(center, 10 * k)
+        circle = rg.Circle(center, radius)
         circle.attach_to(window)
         window.render(0.05)  # Pauses for 0.05 seconds after rendering.
 

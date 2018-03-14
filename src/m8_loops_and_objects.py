@@ -17,7 +17,8 @@ def main():
     # Test your functions by putting calls to them here:
     print_sequence1(5)
     draw_circles1(10)
-
+    print_sequence2(5)
+    draw_circles2(10)
 def print_sequence1(n):
     """
     Prints:
@@ -73,7 +74,7 @@ def draw_circles1(n):
     window.close_on_mouse_click()
 
 
-def print_sequence2():
+def print_sequence2(n):
     """
     Prints:
       50
@@ -85,7 +86,7 @@ def print_sequence2():
       390.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its doc-string above.
+    # DONE: 4. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # ------------------------------------------------------------------
@@ -93,9 +94,13 @@ def print_sequence2():
     print('--------------------------------------------------')
     print('Running print_sequence2:')
     print('--------------------------------------------------')
+    count = 0
+    for k in range(n):
+        count = (10 * (2*k)) + 50
+        print(count)
+    return count
 
-
-def draw_circles2():
+def draw_circles2(n):
     """
     -- Constructs an rg.RoseWindow whose width and height are both 400.
     -- Constructs and draws rg.Circle objects such that:
@@ -106,7 +111,7 @@ def draw_circles2():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement this function, per its doc-string above.
+    # DONE: 5. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # ------------------------------------------------------------------
@@ -114,7 +119,14 @@ def draw_circles2():
     print('--------------------------------------------------')
     print('Running draw_circles2:  See graphics window')
     print('--------------------------------------------------')
+    window = rg.RoseWindow(400, 400)
+    for k in range(n):
+        center = 50
+        circle = rg.Circle(center + ((2*k)*10), 100)
+        circle.attach_to(window)
+        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
 
+    window.close_on_mouse_click()
 
 def print_sequence3():
     """
